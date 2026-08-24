@@ -8,7 +8,7 @@ export default function Home() {
   const searchRef = useRef("");
   const [search,setSearch] = useState(false);
   useEffect(()=>{
-    fetch(process.env.NEXT_PUBLIC_API_URL + '/api/posts')
+    fetch('/api/posts')
     .then((res)=>res.json())
     .then(res => setPosts(res))
   }, [])
@@ -19,7 +19,7 @@ export default function Home() {
   const searchP = () => {
     setSearch(true);
     const query = searchRef.current.value;
-    fetch(process.env.NEXT_PUBLIC_API_URL + '/api/posts?q=' + query)
+    fetch('/api/posts?q=' + query)
       .then((res) => res.json())
       .then((res) => setPosts(res))
       .finally(() => setSearch(false));

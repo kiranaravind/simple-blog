@@ -9,7 +9,7 @@ export default function Contact(){
     }
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/enq", {
+        const response = await fetch("/api/enq", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(inputs)

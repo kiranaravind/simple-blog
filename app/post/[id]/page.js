@@ -5,7 +5,7 @@ export default function Post({params}) {
     const[post,setPost] = useState(null);
     useEffect(() => {
         async function fetchPost() {
-            const response = await fetch(process.env.NEXT_PUBLIC_API_URL + "/api/post/" + id);
+            const response = await fetch("/api/post/" + id);
             const postData = await response.json();
             setPost(postData[0]);}
 
